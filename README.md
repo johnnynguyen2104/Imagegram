@@ -12,7 +12,7 @@ Azure Function, Sql Server, Dapper.
 
   1. Clone the repository (skip this step if you have the project on your machine) and install or update .NET Core version >= 3.0 and Visual Studio 2019 or above.
   
-  2. Running two scripts in the Scripts folder (database_script and data) and please run the `database_script` first. After running these scripts, please update the sql connection string (SqlConnectionString) in the `local.settings.json`.
+  2. Running two scripts in the Scripts folder (database_script and data) and please run the `database_script` first. After running these scripts, please update the sql connection string (SqlConnectionString) in the `local.settings.json` to the connection string that's able to connect on your local machine.
   
   3. Open the Visual Studio as an Administrator to avoid some permission issues.
 

@@ -1,9 +1,9 @@
 # Imagegram
-A system that allows you to upload images and comment on them
+A system that allows you to upload images and comment on them.
 
 ## How Far Did I Get?
 - I have done the implementation that described in the User Stories section as well as most of the functional requirements and the non-functional requirements.
-- However, I did not check the slow connection cases. About the `Maximum image size - 100MB`, by default Azure Function limits the HTTP request length (please refer [this](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#limits))
+- However, I did not check the slow connection cases. About the `Maximum image size - 100MB`, by default Azure Function limits the HTTP request length (please refer [this](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#limits)).
 
 ## Technologies
 Azure Function, Sql Server, Dapper.
@@ -12,7 +12,7 @@ Azure Function, Sql Server, Dapper.
 
   1. Clone the repository (skip this step if you have the project on your machine) and install or update .NET Core version >= 3.0 and Visual Studio 2019 or above.
   
-  2. Running two scripts in the Scripts folder (database_script and data) and please run the `database_script` first. After running these scripts, please update the sql connection string (SqlConnectionString) in the `local.settings.json`
+  2. Running two scripts in the Scripts folder (database_script and data) and please run the `database_script` first. After running these scripts, please update the sql connection string (SqlConnectionString) in the `local.settings.json`.
   
   3. Open the Visual Studio as an Administrator to avoid some permission issues.
 
@@ -39,14 +39,14 @@ Azure Function, Sql Server, Dapper.
 ## Deploy To Prod (Azure)
   1. Build the project.
   3. Create an Azure SQL Database resource and run the scripts inside the folder `Scripts`. 
-  4. After that, Create Azure Key Vault resource and add `RunningEnvironment=AzureEnv` and `SqlConnectionString={AzureSqlConnectionString}`
+  4. After that, Create Azure Key Vault resource and add `RunningEnvironment=AzureEnv` and `SqlConnectionString={AzureSqlConnectionString}`.
   5. Then, create a Managed Identity resource and do the mapping between Azure Function and Key Vault resource. Please refer to this [link](https://daniel-krzyczkowski.github.io/Integrate-Key-Vault-Secrets-With-Azure-Functions/). This step will help us to map whatever we defined in the key vault resource to our project via Enviroment Variables.
-  6. After setting up the Managed Identity and Key Vault, we need to create an Azure Function resource and follow the instruction below
-  7. Publish the project and follow the instruction in this [link](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs?tabs=in-process#publish-to-azure)
+  6. After setting up the Managed Identity and Key Vault, we need to create an Azure Function resource and follow the instruction below.
+  7. Publish the project and follow the instruction in this [link](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs?tabs=in-process#publish-to-azure).
   8. Finally, the Imagegram is ready to test.
 
 ## Improvements
-There are many improvement for this project following below:
+There are many improvement for this project such as:
 
 + Creating unit test for the project.
 

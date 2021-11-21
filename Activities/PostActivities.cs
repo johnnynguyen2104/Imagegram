@@ -83,7 +83,8 @@ namespace Imagegram.Functions.Activities
                 {
                     PostId = p.Id,
                     Caption = p.Caption,
-                    ImageUrl = p.ImageUrl,
+                    // TODO: for now, we select top 1 but later need to think about this logic because the post may have more resources in the future.
+                    ImageUrl = p.Resources.FirstOrDefault().ResourceUrl,
                     Comments = p.Comments
                 })
             };

@@ -10,8 +10,10 @@ namespace Imagegram.Functions.Repositories.Entities
 
         public int PostBy { get; set; }
 
-        public string ImageUrl { get; set; }
+        [Write(false)]
+        public IEnumerable<PostResource> Resources { get; set; }
 
+        [Write(false)]
         public IEnumerable<Comment> Comments { get; set; }
     }
 }

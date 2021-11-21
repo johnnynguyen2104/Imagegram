@@ -21,7 +21,7 @@ namespace Imagegram.Functions.Repositories
 
                     foreach (Post item in posts)
                     {
-                        item.ImageUrl = resources.FirstOrDefault(r => r.PostId == item.Id)?.ResourceUrl;
+                        item.Resources = resources.Where(r => r.PostId == item.Id);
                         item.Comments = new List<Comment>(comments.Where(c => c.PostId == item.Id));
                     }
 

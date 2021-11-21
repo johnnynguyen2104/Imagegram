@@ -23,7 +23,7 @@ namespace Imagegram.Functions.Orchestrators
         {
             SingleCommentCreation input = context.GetInput<SingleCommentCreation>();
 
-            await context.CallActivityAsync(PostActivities.CreateSinglePost, input);
+            await context.CallActivityAsync(PostActivities.CreateSingleComment, input);
         }
 
         [FunctionName(nameof(GetPostsOrchestrator))]

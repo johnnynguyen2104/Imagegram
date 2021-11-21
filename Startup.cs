@@ -20,7 +20,7 @@ namespace Imagegram.Functions
             builder.Services.AddScoped<IRepository<ResourceType>, Repository<ResourceType>>();
 
 
-            if (Environment.GetEnvironmentVariable("RunningEnvironment") == "AWSEnv")
+            if (Environment.GetEnvironmentVariable("RunningEnvironment") == "AzureEnv")
             {
                 builder.Services.AddScoped<IStorage, AzureBlobStorage>();
             }

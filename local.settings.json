@@ -1,0 +1,9 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "RunningEnvironment": "Local",
+    "SqlConnectionString": "Data Source=BT-PF2KM2P0\\SQLEXPRESS;Initial Catalog=Imagregram;Integrated Security=True"
+  }
+}

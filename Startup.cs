@@ -1,5 +1,9 @@
-﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+﻿using Imagegram.Functions.Repositories;
+using Imagegram.Functions.Repositories.Entities;
+using Imagegram.Functions.Storages;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 [assembly: FunctionsStartup(typeof(Imagegram.Functions.Startup))]
 namespace Imagegram.Functions
@@ -10,7 +14,20 @@ namespace Imagegram.Functions
         {
             builder.Services.AddHttpClient();
 
-            
+            builder.Services.AddScoped<IRepository<Post>, Repository<Post>>();
+            builder.Services.AddScoped<IRepository<PostResource>, Repository<PostResource>>();
+            builder.Services.AddScoped<IRepository<Comment>, Repository<Comment>>();
+            builder.Services.AddScoped<IRepository<ResourceType>, Repository<ResourceType>>();
+
+
+            if (Environment.GetEnvironmentVariable("RunningEnvironment") == "AWSEnv")
+            {
+                builder.Services.AddScoped<IStorage, S3Storage>();
+            }
+            else
+            {
+                builder.Services.AddScoped<IStorage, LocalStorage>();
+            }
         }
     }
 }

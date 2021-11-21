@@ -10,7 +10,7 @@ namespace Imagegram.Functions.Repositories
 {
     public class Repository<TClass> : IRepository<TClass> where TClass : BaseEntity, new()
     {
-        private readonly string _sqlConnection;
+        protected readonly string _sqlConnection;
 
         public Repository()
         {

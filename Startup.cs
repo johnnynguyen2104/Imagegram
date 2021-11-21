@@ -14,7 +14,7 @@ namespace Imagegram.Functions
         {
             builder.Services.AddHttpClient();
 
-            builder.Services.AddScoped<IRepository<Post>, Repository<Post>>();
+            builder.Services.AddScoped<IPostRepository, PostRepository>();
             builder.Services.AddScoped<IRepository<PostResource>, Repository<PostResource>>();
             builder.Services.AddScoped<IRepository<Comment>, Repository<Comment>>();
             builder.Services.AddScoped<IRepository<ResourceType>, Repository<ResourceType>>();

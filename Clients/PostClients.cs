@@ -34,8 +34,8 @@ namespace Imagegram.Functions.Clients
                     throw new Exception("Missing image for the post.");
                 }
 
-                List<string> extensions = new List<string>() { ".png", ".jpg", ".bmp" };
-                if (!extensions.Any(e => e == Path.GetExtension(req.Form.Files["Image"].Name)))
+                List<string> extensions = new List<string>() { "image/png", "image/jpg", "image/bmp" };
+                if (!extensions.Any(e => e == req.Form.Files["Image"].ContentType))
                 {
                     throw new Exception("Only png, jpg and bmp are accepted.");
                 }

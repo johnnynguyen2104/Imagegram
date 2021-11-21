@@ -21,7 +21,7 @@ namespace Imagegram.Functions.Clients
     {
         [FunctionName(nameof(CreateSinglePostClient))]
         public static async Task<HttpResponseMessage> CreateSinglePostClient(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "Post")] HttpRequest req,
             [DurableClient] IDurableOrchestrationClient starter,
             ILogger log)
         {
@@ -39,6 +39,8 @@ namespace Imagegram.Functions.Clients
                 {
                     throw new Exception("Only png, jpg and bmp are accepted.");
                 }
+
+                
 
                 using (var ms = new MemoryStream())
                 {
@@ -58,7 +60,7 @@ namespace Imagegram.Functions.Clients
 
         [FunctionName(nameof(CreateSingleCommentClient))]
         public static async Task<HttpResponseMessage> CreateSingleCommentClient(
-           [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequestMessage req,
+           [HttpTrigger(AuthorizationLevel.Function, "post", Route = "Post/Comment")] HttpRequestMessage req,
            [DurableClient] IDurableOrchestrationClient starter,
            ILogger log)
         {
@@ -78,7 +80,7 @@ namespace Imagegram.Functions.Clients
 
         [FunctionName(nameof(GetPostsClient))]
         public static async Task<HttpResponseMessage> GetPostsClient(
-          [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequestMessage req,
+          [HttpTrigger(AuthorizationLevel.Function, "get", Route = "Post")] HttpRequestMessage req,
           [DurableClient] IDurableOrchestrationClient starter,
           ILogger log)
         {

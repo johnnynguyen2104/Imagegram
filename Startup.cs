@@ -22,7 +22,7 @@ namespace Imagegram.Functions
 
             if (Environment.GetEnvironmentVariable("RunningEnvironment") == "AWSEnv")
             {
-                builder.Services.AddScoped<IStorage, S3Storage>();
+                builder.Services.AddScoped<IStorage, AzureBlobStorage>();
             }
             else
             {

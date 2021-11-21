@@ -29,6 +29,11 @@ namespace Imagegram.Functions.Clients
             {
                 SinglePostCreation input = (await req.ReadFormAsync()).BindToModel<SinglePostCreation>();
 
+                if (req.Form.Files["Image"] == null)
+                {
+                    throw new Exception("Missing image for the post.");
+                }
+
                 List<string> extensions = new List<string>() { ".png", ".jpg", ".bmp" };
                 if (!extensions.Any(e => e == Path.GetExtension(req.Form.Files["Image"].Name)))
                 {

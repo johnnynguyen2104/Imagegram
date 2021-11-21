@@ -40,7 +40,7 @@ Azure Function, Sql Server, Dapper.
   1. Build the project.
   3. Create an Azure SQL Database resource and run the scripts inside the folder `Scripts`. 
   4. After that, Create Azure Key Vault resource and add `RunningEnvironment=AzureEnv` and `SqlConnectionString={AzureSqlConnectionString}`
-  5. Then, create a Managed Identity resource and do the mapping between Azure Function and Key Vault resource. Please refer to this [link](https://daniel-krzyczkowski.github.io/Integrate-Key-Vault-Secrets-With-Azure-Functions/). This step will help us to map whatever we defined in the key vault to our project via Enviroment Variables.
+  5. Then, create a Managed Identity resource and do the mapping between Azure Function and Key Vault resource. Please refer to this [link](https://daniel-krzyczkowski.github.io/Integrate-Key-Vault-Secrets-With-Azure-Functions/). This step will help us to map whatever we defined in the key vault resource to our project via Enviroment Variables.
   6. After setting up the Managed Identity and Key Vault, we need to create an Azure Function resource and follow the instruction below
   7. Publish the project and follow the instruction in this [link](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs?tabs=in-process#publish-to-azure)
   8. Finally, the Imagegram is ready to test.

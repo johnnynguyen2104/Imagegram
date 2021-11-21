@@ -3,7 +3,7 @@ A system that allows you to upload images and comment on them
 
 ## How Far Did I Get?
 - I have done the implementation that described in the User Stories section as well as most of the functional requirements and the non-functional requirements.
-- However, I did not check the slow connection cases.
+- However, I did not check the slow connection cases. About the `Maximum image size - 100MB`, by default Azure Function limits the HTTP request length (please refer [this](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#limits))
 
 ## Technologies
 Azure Function, Sql Server, Dapper.
@@ -16,7 +16,7 @@ Azure Function, Sql Server, Dapper.
   
   3. Open the Visual Studio as an Administrator to avoid some permission issues.
 
-  4. Finally, click F5 to start the project normally.
+  4. Finally, click `F5` to start the project normally.
 
 ## APIs
   - Creating single post:
